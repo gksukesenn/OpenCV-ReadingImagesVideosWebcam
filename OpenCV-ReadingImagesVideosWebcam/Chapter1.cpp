@@ -3,17 +3,45 @@
 #include <opencv2/imgproc.hpp>
 #include <iostream>
 
-// For displaying images \\
-
 using namespace std;
 using namespace cv;
 
+// For displaying images \\
+
+//void main()
+//{
+//	string path = "Resources/test.png";
+//	Mat img = imread(path);
+//	imshow("Image", img);
+//	waitKey(0);
+//}
+
+//For displaying videos\\
+
+//void main()
+//{
+//	string path = "Resources/test_video.mp4";
+//	VideoCapture cap(path);
+//	Mat img;
+//	
+//	while (true)
+//	{
+//		cap.read(img);
+//		imshow("Video", img);
+//		waitKey(1);
+//	}
+	
 void main()
 {
-	string path = "Resources/test.png";
-	Mat img = imread(path);
-	imshow("Image", img);
-	waitKey(0);
+	VideoCapture cap(0);
+	Mat img;
+
+	while (true)
+	{
+		cap.read(img);
+		imshow("Webcam", img);
+		waitKey(1);
+	}
 }
 
 
